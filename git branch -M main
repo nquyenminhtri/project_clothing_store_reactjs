@@ -1,0 +1,17 @@
+[33mcommit 4ced1587e7ad3289c35b76543caff46a4018df5f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Tri Nguyen Minh <nmtri102work@gmail.com>
+Date:   Fri Oct 6 15:19:05 2023 +0700
+
+    first commit frontend reactjs
+
+[33mcommit 0869a66dcdbcb2c19411f015c5c270c4b1ea5602[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Nguyen Minh Tri <nmtri102work@gmail.com>
+Date:   Wed Oct 4 22:27:34 2023 +0700
+
+    first commit reactjs
+
+[33mcommit 496ab4a22cc4cae10aad21659db4478821ed985c[m
+Author: Nguyen Minh Tri <nmtri102work@gmail.com>
+Date:   Sun Sep 17 15:04:30 2023 +0700
+
+    Initialize project using Create React App

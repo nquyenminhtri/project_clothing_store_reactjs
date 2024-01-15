@@ -1,0 +1,38 @@
+.fixed-corner {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  
+}
+
+#header-account-btn {
+  display: flex;
+  align-items: center; 
+  text-decoration: none; 
+  
+}
+
+.account-img {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  border-radius: 50px;
+  margin-right: 5px; 
+}
+
+.account-info {
+  width: 150px;
+  background-color: rgba(15, 160, 238, 0.907);
+  display: none;
+  position: absolute;
+  margin-left: 20px;
+  top: 40px;
+  left: 0;
+}
+
+.fixed-corner:hover .account-info {
+  
+  display: block;
+}

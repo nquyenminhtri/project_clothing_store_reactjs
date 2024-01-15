@@ -1,0 +1,12 @@
+.cart-list {
+    display: none; /* Ẩn cart list mặc định */
+  }
+  
+  .cart-list.show {
+    display: block; /* Hiển thị cart list khi có class 'show' */
+  }
+  
+  .cart-list.hide {
+    display: none; /* Ẩn cart list khi có class 'hide' */
+  }
+  
