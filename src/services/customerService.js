@@ -28,8 +28,38 @@ const loginWithFacebook = async (accessToken) => {
         console.error('Login with Facebook failed:', error);
     }
 };
+const signupCustomerFromAPI = async (name,
+  gender,
+  phone,
+  email,
+  address,
+  password,) =>{
+  return await axios.post(`${API_URL}/customer/sign-up`,{name,
+    gender,
+    phone,
+    email,
+    address,
+    password,},{withCredentials:true})
+}
+const resetPasswordByEmail = async(email)=>{
+  return await axios.post(`${API_URL}/customer/reset-password`,{email},{withCredentials:true});
+}
+const changePasswordByEmail = async(email,password)=>{
+  return await axios.post(`${API_URL}/customer/change-password`,{email,password},{withCredentials:true});
+}
+const handleChangePasswordByEmail = async(email,new_password,confirmation_code)=>{
+  return await axios.put(`${API_URL}/customer/change-password`,{email,new_password,confirmation_code},{withCredentials:true});
+}
+const handelUpdateAccount = async(dataToSend)=>{
+  return await axios.put(`${API_URL}/customer/update`,dataToSend,{withCredentials:true});
+}
 export default {
     customerLoginFromAPI,
     customerLogoutFromAPI,
-    loginWithFacebook
+    loginWithFacebook,
+    signupCustomerFromAPI,
+    resetPasswordByEmail,
+    changePasswordByEmail,
+    handleChangePasswordByEmail,
+    handelUpdateAccount
 };

@@ -6,6 +6,8 @@ import { setSize } from '../../../redux/features/sizeSlice';
 import { setColor } from '../../../redux/features/colorSlice';
 function ProducInformation({ information }) {
   const dispatch = useDispatch();
+  const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+  console.log('check ex:',existingCart);
   const quantity = useSelector((state) => state.quantity);
   const selectedSize  = useSelector((state)=>state.size.selectedSize );
   const selectedSizeId  = useSelector((state)=>state.size.id );
@@ -40,13 +42,14 @@ function ProducInformation({ information }) {
     //   material:
       // Thêm các thông tin khác của sản phẩm cần lưu vào cart
     };
-  
+    console.log('check product data:', productData);
     // Lấy danh sách sản phẩm từ localStorage (nếu có)
     const existingCart = JSON.parse(localStorage.getItem('cart')) || [];
+    
     const existingProduct = existingCart.find((item) =>
         item.product.id === productData.product.id &&
-        item.size.selectedSize === productData.size.selectedSize &&
-        item.color.selectedColor === productData.color.selectedColor
+        item.size === productData.size &&
+        item.color === productData.color
     );
     if (existingProduct) {
       // Nếu sản phẩm đã tồn tại, tăng số lượng
@@ -76,7 +79,7 @@ function ProducInformation({ information }) {
   
     if (isProductExist) {
       saveToLocalStorage();
-      window.location.href = '/cart';
+     window.location.href = '/cart';
     } else {
       alert("Sản phẩm không có sẵn với kích thước và màu đã chọn, hoặc không đủ số lượng.");
     }

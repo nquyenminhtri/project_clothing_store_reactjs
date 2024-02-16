@@ -39,7 +39,7 @@ function Account() {
               <div className="account-info">
                 <ul>
                   <li><a href="/profile">My Profile</a></li>
-                  <li><a href="/cart">My Orders</a></li>
+                  <li><a href="/ordermanagement">My Orders</a></li>
                   <li><a href="/login" onClick={handleLogout}>Logout</a></li>
                 </ul>
               </div>

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  setId,
   setName,
   setGender,
   setAddress,
@@ -19,6 +20,7 @@ function BillingAddress() {
 
     if (localStorageData) {
       // Dispatch actions to set the data from localStorage
+      dispatch(setName(localStorageData.id || ''));
       dispatch(setName(localStorageData.name || ''));
       dispatch(setGender(localStorageData.gender || 'male'));
       dispatch(setAddress(localStorageData.address || ''));

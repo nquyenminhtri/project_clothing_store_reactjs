@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+  id:'',
   name: '',
   gender: 'male',
   address: '',
@@ -12,6 +13,9 @@ const customerDataSlice = createSlice({
   name: 'customerData',
   initialState,
   reducers: {
+    setId: (state, action) => {
+      state.id = action.payload;
+    },
     setName: (state, action) => {
       state.name = action.payload;
     },
@@ -31,6 +35,7 @@ const customerDataSlice = createSlice({
 });
 
 export const {
+  setId,
   setName,
   setGender,
   setAddress,

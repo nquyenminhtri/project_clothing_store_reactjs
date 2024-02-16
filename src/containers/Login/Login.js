@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import './Login.css';
 import customerService from '../../services/customerService';
-
+import { useDispatch } from 'react-redux';
+import {
+    setId,
+    setName,
+    setGender,
+    setAddress,
+    setPhone,
+    setEmail,
+    selectCustomerData,
+} from '../../redux/features/customerDataSlice';
 function Login() {
   const [phone, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
-
+  const dispatch = useDispatch();
 
   
 
@@ -15,6 +24,15 @@ function Login() {
     try {
       const response = await customerService.customerLoginFromAPI(phone, password);
       localStorage.setItem('customerData', JSON.stringify(response.customerData));
+      //set dữ liệu vào redux
+
+     
+      dispatch(setId(response.customerData.id));
+      dispatch(setName(response.customerData.name));
+      dispatch(setGender(response.customerData.gender));
+      dispatch(setAddress(response.customerData.address));
+      dispatch(setPhone(response.customerData.phone));
+      dispatch(setEmail(response.customerData.email));
       localStorage.setItem('isLoggedIn', true);
       window.location.href = '/';
     } catch (error) {
@@ -78,10 +96,10 @@ function Login() {
                         
                         <hr/>
                                 <div className="text-center">
-                                    <a className="small" href="forgot-password.html">Forgot Password?</a>
+                                    <a className="small" href="reset-password">Forgot Password?</a>
                                 </div>
                                 <div className="text-center">
-                                    <a className="small" href="register.html">Create an Account!</a>
+                                    <a className="small" href="sign-up">Create an Account!</a>
                                 </div>
                       </div>
                     </div>

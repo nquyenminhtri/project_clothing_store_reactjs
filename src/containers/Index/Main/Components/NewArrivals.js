@@ -131,7 +131,9 @@ function NewArrivals() {
                 </div>
 
                 <div className="product-description">
+                  <h5>{productItem.name}</h5>
                   <h4 className="product-price">{productItem.price}</h4>
+
                   <p>{productItem.description}</p>
                   <a href="#" className="add-to-cart-btn">
                     ADD TO CART

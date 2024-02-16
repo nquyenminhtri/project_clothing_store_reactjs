@@ -9,6 +9,9 @@ import shippingReducer from './features/shippingSlice';
 import totalPriceReducer from './features/totalPriceSlice';
 import customerDataReducer from './features/customerDataSlice';
 import paymentMethodReducer from './features/paymentMethodSlice';
+import orderReducer from './features/orderService';
+import filteredOrdersReducer from './features/filteredOrdersSlice';
+import userReducer from './features/userSlice';
 export const store = configureStore({
   reducer: {
     product: productReducer,
@@ -20,5 +23,8 @@ export const store = configureStore({
     totalPrice: totalPriceReducer,
     customerData: customerDataReducer,
     paymentMethod: paymentMethodReducer,
+    order:orderReducer,
+    filteredOrders:filteredOrdersReducer,
+    user: userReducer,
   },
 });
